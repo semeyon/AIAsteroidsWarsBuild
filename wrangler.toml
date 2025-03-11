@@ -1,0 +1,9 @@
+name = "asteroidswars"
+compatibility_date = "2025-03-10"
+pages_build_output_dir = "./dist"
+[vars]
+BOT_TOKEN = "7523967260:AAFBRoz_XTSiGl4kpZdpmSPfJZnpyol5viE"
+BOT_SECRET = "can_be_any_long_random_string_ab123_do_not_share"
+ 
+[dev]
+port = 4444
