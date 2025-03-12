@@ -1,11 +1,10 @@
 {
-  "homepage": "http://jsv7.github.io/AIAsteroidsWarsBuild",
-  "name": "react-unity-webgl-demo",
+  "homepage": "http://jsv7.github.io/_wars1",
+  "name": "asteroid wars",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "dev": "vite --port 4444",
@@ -22,7 +21,6 @@
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
-    "gh-pages": "^6.3.0",
     "typescript": "^5.4.5",
     "vite": "^5.4.14",
     "vite-plugin-static-copy": "^2.2.0"
