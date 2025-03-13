@@ -1,27 +1,28 @@
 {
-  "name": "asteroid wars",
+  "name": "wars1",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "dev": "vite --port 4444",
-    "build": "tsc && vite build",
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-oauth/google": "^0.12.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-unity-webgl": "^9.5.2"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-unity-webgl": "^9.8.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "@vitejs/plugin-react": "^4.2.1",
-    "typescript": "^5.4.5",
-    "vite": "^5.4.14",
-    "vite-plugin-static-copy": "^2.2.0"
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "vite": "^6.2.0"
   }
 }
