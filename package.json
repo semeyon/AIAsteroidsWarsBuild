@@ -1,9 +1,13 @@
 {
-  "name": "wars1",
+  "homepage": "http://jsv7.github.io/AIAsteroidsWarsBuild",
+  "name": "warssss1",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
