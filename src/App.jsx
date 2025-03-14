@@ -18,5 +18,6 @@ function App() {
       <Unity unityProvider={unityProvider} />
       <button onClick={handleClickSpawnEnemies}>Spawn Enemies</button>
     </Fragment>
+  );
 
 }
