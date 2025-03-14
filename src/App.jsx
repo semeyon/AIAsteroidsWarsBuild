@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
+import Button from "Components/TestButton"
 
 function App() {
   const { unityProvider, sendMessage } = useUnityContext({
@@ -13,9 +14,15 @@ function App() {
     sendMessage("TESTtext", "SpawnEnemies", 100);
   }
 
+
   return (
+    <div>
+      <h1>
+        fdfdffd
+      </h1>
+    </div>
     <Fragment>
-      <button type="button" onClick={handleClickSpawnEnemies}>Spawn Enemies</button>
+      <Button onClick={handleClickSpawnEnemies}/>
       <Unity unityProvider={unityProvider} />
     </Fragment>
   );
