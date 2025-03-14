@@ -15,9 +15,10 @@ function App() {
 
   return (
     <Fragment>
+      <button type="button" onClick={handleClickSpawnEnemies}>Spawn Enemies</button>
       <Unity unityProvider={unityProvider} />
-      <button onClick={handleClickSpawnEnemies}>Spawn Enemies</button>
     </Fragment>
   );
 
 }
+export default App;
