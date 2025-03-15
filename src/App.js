@@ -11,9 +11,20 @@ function App() {
     codeUrl: "/assets/WebGL.wasm.unityweb",
   });
   function haptic() {
-    if (hapticFeedback.impactOccurred.isAvailable()) {
-      hapticFeedback.impactOccurred('medium');
-    }
+    if (window.Telegram.WebApp) {
+
+      const haptic = window.Telegram.WebApp.HapticFeedback;
+
+    // Trigger haptic feedback on a click event
+
+      document.querySelector('#clickerButton').addEventListener('click', function() {
+      haptic.impactOccurred('light');
+
+           // Other game logic
+
+       });
+
+     }
   }
   // const handleHaptic = useCallback((userName, score) => {
   //   setIsGameOver(true);
