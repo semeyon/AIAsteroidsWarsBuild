@@ -12,7 +12,15 @@ function App() {
   return (
     <div className="App">
 
-      <Unity unityProvider={unityProvider} />
+      <Unity
+      style ={{
+          width: "80%",
+
+          justifySelf: "center",
+          alignSelf: "center",
+        }}
+         unityProvider={unityProvider} />
+         
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
