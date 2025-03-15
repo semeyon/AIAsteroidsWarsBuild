@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Unity, useUnityContext } from "react-unity-webgl";
+import { hapticFeedback } from '@telegram-apps/sdk';
 
 function App() {
   const { unityProvider } = useUnityContext({
@@ -9,6 +10,24 @@ function App() {
     frameworkUrl: "assets/WebGL.framework.js",
     codeUrl: "assets/WebGL.wasm",
   });
+
+  function haptic() {
+      if (window.Telegram.WebApp) {
+
+        const haptic = window.Telegram.WebApp.HapticFeedback;
+
+      // Trigger haptic feedback on a click event
+
+        document.querySelector('#clickerButton').addEventListener('click', function() {
+        haptic.impactOccurred('light');
+
+             // Other game logic
+
+         });
+
+       }
+    }
+
   return (
     <div className="App">
 
@@ -20,7 +39,7 @@ function App() {
           alignSelf: "center",
         }}
          unityProvider={unityProvider} />
-         
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -35,6 +54,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <button onClick={haptic}>Haptic</button>
     </div>
   );
 }
