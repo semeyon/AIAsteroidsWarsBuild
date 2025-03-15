@@ -41,7 +41,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <button style ={{width: "300", height: "300"}} onClick={haptic}>Haptic</button>
+      <button type="button" onClick={haptic}>Haptic</button>
     </div>
   );
 }
