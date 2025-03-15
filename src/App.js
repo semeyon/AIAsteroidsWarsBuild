@@ -1,0 +1,46 @@
+import './App.css';
+import React, { Fragment, useCallback, useEffect } from "react";
+import { Unity, useUnityContext } from "react-unity-webgl";
+import { hapticFeedback } from '@telegram-apps/sdk';
+
+function App() {
+  const { unityProvider, addEventListener, removeEventListener } = useUnityContext({
+    loaderUrl: "/assets/WebGL.loader.js",
+    dataUrl: "/assets/WebGL.data.unityweb",
+    frameworkUrl: "/assets/WebGL.framework.js.unityweb",
+    codeUrl: "/assets/WebGL.wasm.unityweb",
+  });
+  function haptic() {
+    if (hapticFeedback.impactOccurred.isAvailable()) {
+      hapticFeedback.impactOccurred('medium');
+    }
+  }
+  // const handleHaptic = useCallback((userName, score) => {
+  //   setIsGameOver(true);
+  //   setUserName(userName);
+  //   setScore(score);
+  // }, []);
+  //
+  // useEffect(() => {
+  //   addEventListener("GameOver", handleHaptic);
+  //   return () => {
+  //     removeEventListener("GameOver", handleHaptic);
+  //   };
+  // }, [addEventListener, removeEventListener, handleHaptic]);
+
+  return (
+    <Fragment>
+      <Unity
+        style ={{
+          width: "80%",
+
+          justifySelf: "center",
+          alignSelf: "center",
+        }}
+        unityProvider={unityProvider}
+      />
+      <button onClick={haptic}>Spawn Enemies</button>
+    </Fragment>
+  );
+}
+export default App;
