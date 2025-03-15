@@ -10,10 +10,9 @@ function App() {
     codeUrl: "assets/WebGL.wasm",
   });
   return (
-
-    <Unity unityProvider={unityProvider} />
-
     <div className="App">
+
+      <Unity unityProvider={unityProvider} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
