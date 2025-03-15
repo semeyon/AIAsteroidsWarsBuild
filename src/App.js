@@ -1,10 +1,11 @@
 import './App.css';
-import React, { Fragment, useCallback, useEffect } from "react";
+//import React, { Fragment, useCallback, useEffect } from "react";
+import React, { Fragment } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
-import { hapticFeedback } from '@telegram-apps/sdk';
+//import { hapticFeedback } from '@telegram-apps/sdk';
 
 function App() {
-  const { unityProvider, addEventListener, removeEventListener } = useUnityContext({
+  const { unityProvider/*, addEventListener, removeEventListener*/ } = useUnityContext({
     loaderUrl: "/assets/WebGL.loader.js",
     dataUrl: "/assets/WebGL.data.unityweb",
     frameworkUrl: "/assets/WebGL.framework.js.unityweb",
