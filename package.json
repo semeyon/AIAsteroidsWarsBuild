@@ -2,7 +2,7 @@
   "homepage": "http://jsv7.github.io/AIAsteroidsWarsBuild",
   "name": "wars3",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@telegram-apps/sdk-react": "^3.1.2",
     "@testing-library/dom": "^10.4.0",
