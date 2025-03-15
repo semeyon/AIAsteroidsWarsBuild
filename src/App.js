@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Unity, useUnityContext } from "react-unity-webgl";
-import { hapticFeedback } from '@telegram-apps/sdk';
+import { hapticFeedbackNotificationOccurred } from '@telegram-apps/sdk';
 
 function App() {
   const { unityProvider } = useUnityContext({
@@ -12,7 +12,9 @@ function App() {
   });
 
   function haptic() {
-      navigator.vibrate(1000);
+      if (hapticFeedbackNotificationOccurred.isAvailable()) {
+        hapticFeedbackNotificationOccurred('success');
+      }
     }
 
   return (
@@ -28,6 +30,7 @@ function App() {
          unityProvider={unityProvider} />
 
       <header className="App-header">
+        <button type="button" onClick={haptic}>Haptic test</button>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -41,7 +44,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <button type="button" onClick={haptic}>Haptic</button>
+
     </div>
   );
 }
