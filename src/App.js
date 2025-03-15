@@ -10,22 +10,22 @@ function App() {
     frameworkUrl: "/assets/WebGL.framework.js.unityweb",
     codeUrl: "/assets/WebGL.wasm.unityweb",
   });
-  function haptic() {
-    if (window.Telegram.WebApp) {
-
-      const haptic = window.Telegram.WebApp.HapticFeedback;
-
-    // Trigger haptic feedback on a click event
-
-      document.querySelector('#clickerButton').addEventListener('click', function() {
-      haptic.impactOccurred('light');
-
-           // Other game logic
-
-       });
-
-     }
-  }
+  // function haptic() {
+  //   if (window.Telegram.WebApp) {
+  //
+  //     const haptic = window.Telegram.WebApp.HapticFeedback;
+  //
+  //   // Trigger haptic feedback on a click event
+  //
+  //     document.querySelector('#clickerButton').addEventListener('click', function() {
+  //     haptic.impactOccurred('light');
+  //
+  //          // Other game logic
+  //
+  //      });
+  //
+  //    }
+  // }
   // const handleHaptic = useCallback((userName, score) => {
   //   setIsGameOver(true);
   //   setUserName(userName);
@@ -50,7 +50,7 @@ function App() {
         }}
         unityProvider={unityProvider}
       />
-      <button onClick={haptic}>Haptic</button>
+      <button /*onClick={haptic}*/>Haptic</button>
     </Fragment>
   );
 }
