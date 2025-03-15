@@ -12,20 +12,7 @@ function App() {
   });
 
   function haptic() {
-      if (window.Telegram.WebApp) {
-
-        const haptic = window.Telegram.WebApp.HapticFeedback;
-
-      // Trigger haptic feedback on a click event
-
-        document.querySelector('#clickerButton').addEventListener('click', function() {
-        haptic.impactOccurred('light');
-
-             // Other game logic
-
-         });
-
-       }
+      navigator.vibrate(1000);
     }
 
   return (
