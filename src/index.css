@@ -17,7 +17,7 @@ button{
   font-size: 24px;
 }
 
-html, root, root.render, React.StrictMode, body, #app,#App, #app>div {
+html, root, root.render, React.StrictMode, body, #app,#App,#App>div #app>div {
   position: absolute;
   top: 0;
   right: 0;

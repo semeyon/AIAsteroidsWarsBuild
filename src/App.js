@@ -47,10 +47,11 @@ function App() {
     <Fragment >
       <Unity
       style ={{
-          width: "100%",
-          height: "100%",
-          justifySelf: "center",
-          alignSelf: "center",
+        width: "100vw",   // Full viewport width
+        height: "100vh",  // Full viewport height
+        position: "absolute",
+        top: 0,
+        left: 0,
         }}
          unityProvider={unityProvider} />
     </Fragment>
