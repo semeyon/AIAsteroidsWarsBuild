@@ -5,9 +5,9 @@ import { useHapticFeedback } from '@vkruglikov/react-telegram-web-app';
 function App() {
   const { unityProvider } = useUnityContext({
     loaderUrl: "assets/WebGL.loader.js",
-    dataUrl: "assets/WebGL.data",
-    frameworkUrl: "assets/WebGL.framework.js",
-    codeUrl: "assets/WebGL.wasm",
+    dataUrl: "assets/WebGL.data.unityweb",
+    frameworkUrl: "assets/WebGL.framework.js.unityweb",
+    codeUrl: "assets/WebGL.wasm.unityweb",
   });
   const [impactOccurred, notificationOccurred, selectionChanged] =
     useHapticFeedback();
@@ -32,8 +32,6 @@ function App() {
 
       <header className="App-header">
       <button type="button"  onClick={haptic2}>Haptic2</button>
-      <button type="button"  onClick={haptic2}>Haptic2</button>
-        <button type="button" onClick={haptic}>Haptic test</button>
         <button type="button" onClick={haptic}>Haptic test</button>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
