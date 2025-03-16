@@ -9,12 +9,9 @@ function App() {
     frameworkUrl: "assets/WebGL.framework.js.unityweb",
     codeUrl: "assets/WebGL.wasm.unityweb",
   });
-  const [impactOccurred, notificationOccurred, selectionChanged] =
+  const [notificationOccurred] =
     useHapticFeedback();
 
-  function haptic() {
-      impactOccurred('heavy');
-    }
     function haptic2() {
         notificationOccurred('success');
       }
@@ -32,7 +29,6 @@ function App() {
 
       <header className="App-header">
       <button type="button"  onClick={haptic2}>Haptic2</button>
-        <button type="button" onClick={haptic}>Haptic test</button>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
