@@ -56,7 +56,6 @@ function App() {
         )}
 
       <header className="App-header">
-      <button type="button" onClick={haptic}>Haptic test</button>
         <button type="button"  onClick={haptic2}>Haptic2</button>
 
         <img src={logo} className="App-logo" alt="logo" />
