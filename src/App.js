@@ -19,7 +19,6 @@ function App() {
         notificationOccurred('success');
       }
   return (
-    impactOccurred('heavy');
     <div className="App">
 
       <Unity
