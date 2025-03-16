@@ -19,6 +19,7 @@ function App() {
 
     function hapticSoft() {
       notificationOccurred('success');
+      document.documentElement.requestFullscreen();
     }
   function hapticMedium() {
     notificationOccurred('error');
@@ -44,7 +45,7 @@ function App() {
 
 
   return (
-    <Fragment>
+    <Fragment >
       <Unity
       style ={{
           width: "100%",
