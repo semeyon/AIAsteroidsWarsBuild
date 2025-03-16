@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React, { Fragment, useState, useCallback, useEffect } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
@@ -44,7 +44,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <Fragment>
       <Unity
       style ={{
           width: "80%",
@@ -53,8 +53,7 @@ function App() {
           alignSelf: "center",
         }}
          unityProvider={unityProvider} />
-        <button type="button"  onClick={hapticMedium}>hapticMedium</button>
-    </div>
+    </Fragment>
   );
 }
 
