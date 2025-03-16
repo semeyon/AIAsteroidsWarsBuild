@@ -1,6 +1,6 @@
 {
   "homepage": "https://jsv7.github.io/AIAsteroidsWarsBuild/",
-  "name": "wars4",
+  "name": "AIAsteroidsWarsBuild",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
