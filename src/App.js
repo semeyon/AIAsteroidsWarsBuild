@@ -29,11 +29,12 @@ function App() {
      setIsGameOver(true);
      setUserName(userName);
      setScore(score);
+     haptic2();
    }, []);
 
    useEffect(() => {
      addEventListener("GameOver", handleGameOver);
-     haptic2();
+
      return () => {
        removeEventListener("GameOver", handleGameOver);
      };
