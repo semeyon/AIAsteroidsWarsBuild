@@ -9,9 +9,12 @@ function App() {
     frameworkUrl: "assets/WebGL.framework.js",
     codeUrl: "assets/WebGL.wasm",
   });
-  const [notificationOccurred] =
+  const [impactOccurred, notificationOccurred, selectionChanged] =
     useHapticFeedback();
 
+  function haptic() {
+      impactOccurred('heavy');
+    }
     function haptic2() {
         notificationOccurred('success');
       }
@@ -31,10 +34,14 @@ function App() {
       <header className="App-header">
 <<<<<<< HEAD
       <button type="button"  onClick={haptic2}>Haptic2</button>
+<<<<<<< HEAD
 =======
       <button type="button" style={{"background-color": "#04AA6D";"font-size": "24px"}} onClick={haptic2}>Haptic2</button>
         <button type="button" onClick={haptic}>Haptic test</button>
 >>>>>>> parent of 2f903b6 (12)
+=======
+        <button type="button" onClick={haptic}>Haptic test</button>
+>>>>>>> parent of 0026b7f (12)
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
