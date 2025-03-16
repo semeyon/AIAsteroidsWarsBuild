@@ -5,9 +5,8 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 import { useHapticFeedback } from '@vkruglikov/react-telegram-web-app';
 
 function App() {
-  const [isGameOver, setIsGameOver] = useState(false);
-    const [userName, setUserName] = useState();
-    const [score, setScore] = useState();
+  const [isHapticSoft, setIsHapticSoft] = useState(false);
+  const [isHapticMedium, setIsHapticMedium] = useState(false);
 
   const { unityProvider, addEventListener, removeEventListener } = useUnityContext({
     loaderUrl: "assets/WebGL.loader.js",
@@ -18,27 +17,30 @@ function App() {
   const [impactOccurred, notificationOccurred, selectionChanged] =
     useHapticFeedback();
 
-  function haptic() {
-    impactOccurred('heavy');
-  }
-  function haptic2() {
-    notificationOccurred('success');
+    function hapticSoft() {
+      notificationOccurred('success');
+    }
+  function hapticMedium() {
+    notificationOccurred('error');
   }
 
-  const handleGameOver = useCallback((userName, score) => {
-     setIsGameOver(true);
-     setUserName(userName);
-     setScore(score);
-     haptic2();
+  const handleHapticSoft = useCallback(() => {
+     hapticSoft();
    }, []);
 
+   const handleHapticMedium = useCallback(() => {
+      hapticMedium();
+    }, []);
+
    useEffect(() => {
-     addEventListener("GameOver", handleGameOver);
+     addEventListener("HapticSoft", handleHapticSoft);
+     addEventListener("HapticMedium", handleHapticMedium);
 
      return () => {
-       removeEventListener("GameOver", handleGameOver);
+       removeEventListener("HapticSoft", handleHapticSoft);
+       removeEventListener("HapticMedium", handleHapticMedium);
      };
-   }, [addEventListener, removeEventListener, handleGameOver]);
+   }, [addEventListener, removeEventListener, handleHapticSoft]);
 
 
   return (
@@ -51,27 +53,7 @@ function App() {
           alignSelf: "center",
         }}
          unityProvider={unityProvider} />
-      {isGameOver === true && (
-            <p>{`Game Over ${userName}! You've scored ${score} points.`}</p>
-        )}
-
-      <header className="App-header">
-        <button type="button"  onClick={haptic2}>Haptic2</button>
-
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-
+        <button type="button"  onClick={hapticMedium}>hapticMedium</button>
     </div>
   );
 }
