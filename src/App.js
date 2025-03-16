@@ -47,8 +47,8 @@ function App() {
     <Fragment>
       <Unity
       style ={{
-          width: "80%",
-
+          width: "100%",
+          height: "100%",
           justifySelf: "center",
           alignSelf: "center",
         }}
