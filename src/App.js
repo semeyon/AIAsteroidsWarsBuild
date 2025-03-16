@@ -1,9 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { Fragment, useState, useCallback, useEffect } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { useHapticFeedback } from '@vkruglikov/react-telegram-web-app';
+
 function App() {
-  const { unityProvider } = useUnityContext({
+  const [isGameOver, setIsGameOver] = useState(false);
+    const [userName, setUserName] = useState();
+    const [score, setScore] = useState();
+
+  const { unityProvider, addEventListener, removeEventListener } = useUnityContext({
     loaderUrl: "assets/WebGL.loader.js",
     dataUrl: "assets/WebGL.data.unityweb",
     frameworkUrl: "assets/WebGL.framework.js.unityweb",
@@ -13,14 +19,29 @@ function App() {
     useHapticFeedback();
 
   function haptic() {
-      impactOccurred('heavy');
-    }
-    function haptic2() {
-        notificationOccurred('success');
-      }
+    impactOccurred('heavy');
+  }
+  function haptic2() {
+    notificationOccurred('success');
+  }
+
+  const handleGameOver = useCallback((userName, score) => {
+     setIsGameOver(true);
+     setUserName(userName);
+     setScore(score);
+   }, []);
+
+   useEffect(() => {
+     addEventListener("GameOver", handleGameOver);
+     haptic2();
+     return () => {
+       removeEventListener("GameOver", handleGameOver);
+     };
+   }, [addEventListener, removeEventListener, handleGameOver]);
+
+
   return (
     <div className="App">
-
       <Unity
       style ={{
           width: "80%",
@@ -29,6 +50,9 @@ function App() {
           alignSelf: "center",
         }}
          unityProvider={unityProvider} />
+      {isGameOver === true && (
+            <p>{`Game Over ${userName}! You've scored ${score} points.`}</p>
+        )}
 
       <header className="App-header">
       <button type="button" onClick={haptic}>Haptic test</button>
