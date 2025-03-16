@@ -19,7 +19,6 @@ function App() {
 
     function hapticSoft() {
       notificationOccurred('success');
-      document.documentElement.requestFullscreen();
     }
   function hapticMedium() {
     notificationOccurred('error');
