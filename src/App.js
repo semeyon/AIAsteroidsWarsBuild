@@ -16,6 +16,7 @@ function App() {
         notificationOccurred('success');
       }
   return (
+    impactOccurred('heavy');
     <div className="App">
 
       <Unity
@@ -28,7 +29,12 @@ function App() {
          unityProvider={unityProvider} />
 
       <header className="App-header">
+<<<<<<< HEAD
       <button type="button"  onClick={haptic2}>Haptic2</button>
+=======
+      <button type="button" style={{"background-color": "#04AA6D";"font-size": "24px"}} onClick={haptic2}>Haptic2</button>
+        <button type="button" onClick={haptic}>Haptic test</button>
+>>>>>>> parent of 2f903b6 (12)
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
