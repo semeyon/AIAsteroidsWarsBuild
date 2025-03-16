@@ -5,10 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+ReactDom.render(<PollOverlay questionId={54} />, this.modal.contentEl());
 root.render(
   <React.StrictMode>
     <App/>
-  </React.StrictMode>
+  </React.StrictMode>, this.modal.contentEl()
 );
 
 // If you want to start measuring performance in your app, pass a function
