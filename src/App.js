@@ -32,7 +32,7 @@ function App() {
 
       <header className="App-header">
       <button type="button"  onClick={haptic2}>Haptic2</button>
-      <button type="button" style={{"background-color": "#04AA6D";"font-size": "24px"}} onClick={haptic2}>Haptic2</button>
+      <button type="button"  onClick={haptic2}>Haptic2</button>
         <button type="button" onClick={haptic}>Haptic test</button>
         <button type="button" onClick={haptic}>Haptic test</button>
         <img src={logo} className="App-logo" alt="logo" />
