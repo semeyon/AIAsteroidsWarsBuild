@@ -6,6 +6,8 @@ import { useHapticFeedback } from '@vkruglikov/react-telegram-web-app';
 
 import { viewport, init, isTMA } from "@telegram-apps/sdk";
 
+import Loader from 'react-loader-spinner';
+
 async function initTg() {
     if (await isTMA()) {
         init(); // init tg app
@@ -24,10 +26,6 @@ async function initTg() {
 (async () => {
     await initTg();
 })();
-
-
-
-
 
 function App() {
   const [isHapticSoft, setIsHapticSoft] = useState(false);
@@ -70,6 +68,7 @@ function App() {
 
   return (
     <Fragment >
+      <Loader type="Circles" color="#00BFFF" height={80} width={80}/>
       <Unity
       style ={{
         width: "100vw",   // Full viewport width
