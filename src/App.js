@@ -71,6 +71,16 @@ function App() {
     }, []);
 
    useEffect(() => {
+     const canvas = document.querySelector("canvas");
+  if (canvas) {
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    canvas.style.width = "100vw";
+    canvas.style.height = "100vh";
+  }
+
+
      addEventListener("HapticSoft", handleHapticSoft);
      addEventListener("HapticMedium", handleHapticMedium);
 

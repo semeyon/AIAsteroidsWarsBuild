@@ -1,7 +1,10 @@
 .App {
   text-align: center;
 }
-
+canvas {
+  image-rendering: crisp-edges; /* For sharper rendering */
+  image-rendering: pixelated;   /* Helps with low-res upscaling */
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -12,13 +15,13 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-html, root, root.render, React.StrictMode, body, #app,#App,#App>div #app>div {
+/* html, root, root.render, React.StrictMode, body, #app,#App,#App>div #app>div {
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-}
+} */
 
 .App-header {
   background-color: #282c34;
