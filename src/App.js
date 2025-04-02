@@ -6,7 +6,22 @@ import { useHapticFeedback } from '@vkruglikov/react-telegram-web-app';
 
 import { viewport, init, isTMA } from "@telegram-apps/sdk";
 
-import Loader from 'react-loader-spinner';
+import { RotatingLines } from "react-loader-spinner";
+
+function Loader() {
+  return (
+    <RotatingLines
+      display="flex"
+      justify-content="center"
+      align-items="center"
+      strokeColor="grey"
+      strokeWidth="5"
+      animationDuration="30"
+      width="96"
+      visible={true}
+    />
+  )
+}
 
 async function initTg() {
     if (await isTMA()) {
@@ -65,10 +80,9 @@ function App() {
      };
    }, [addEventListener, removeEventListener, handleHapticSoft]);
 
-
   return (
     <Fragment >
-      <Loader type="Circles" color="#00BFFF" height={80} width={80}/>
+      <Loader  height={80} width={80}/>
       <Unity
       style ={{
         width: "100vw",   // Full viewport width
