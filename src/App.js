@@ -11,14 +11,12 @@ import { RotatingLines } from "react-loader-spinner";
 function Loader() {
   return (
     <RotatingLines
-      display="flex"
-      justify-content="center"
-      align-items="center"
-      strokeColor="grey"
+      strokeColor="green"
       strokeWidth="5"
       animationDuration="30"
       width="96"
       visible={true}
+
     />
   )
 }
@@ -71,13 +69,16 @@ function App() {
     }, []);
 
    useEffect(() => {
-     const canvas = document.querySelector("canvas");
+     const canvas = document.getElementById("root");
   if (canvas) {
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = window.innerWidth * dpr;
-    canvas.height = window.innerHeight * dpr;
-    canvas.style.width = "100vw";
-    canvas.style.height = "100vh";
+    const newWidth = canvas.clientWidth;
+    const newHeigth = canvas.clientHeigth;
+
+    // const dpr = window.devicePixelRatio || 1;
+    // canvas.width = window.innerWidth * dpr;
+    // canvas.height = window.innerHeight * dpr;
+    // canvas.style.width = "100vw";
+    // canvas.style.height = "100vh";
   }
 
 
@@ -92,7 +93,10 @@ function App() {
 
   return (
     <Fragment >
-      <Loader  height={80} width={80}/>
+      <div className="center">
+          <Loader />
+      </div>
+
       <Unity
       style ={{
         width: "100vw",   // Full viewport width

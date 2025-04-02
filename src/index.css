@@ -20,6 +20,12 @@ canvas {
   image-rendering: crisp-edges; /* For sharper rendering */
   image-rendering: pixelated;   /* Helps with low-res upscaling */
 }
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 /* html, root, root.render, React.StrictMode, body, #app,#App,#App>div #app>div {
   position: absolute;
   top: 0;

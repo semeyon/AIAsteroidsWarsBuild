@@ -15,6 +15,12 @@ canvas {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 /* html, root, root.render, React.StrictMode, body, #app,#App,#App>div #app>div {
   position: absolute;
   top: 0;
