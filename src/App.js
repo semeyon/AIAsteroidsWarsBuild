@@ -44,7 +44,7 @@ function App() {
   const [isHapticSoft, setIsHapticSoft] = useState(false);
   const [isHapticMedium, setIsHapticMedium] = useState(false);
 
-  const { unityProvider, addEventListener, removeEventListener } = useUnityContext({
+  const { unityProvider, addEventListener, removeEventListener, loadingProgression, isLoaded  } = useUnityContext({
     loaderUrl: "assets/WebGL.loader.js",
     dataUrl: "assets/WebGL.data.unityweb",
     frameworkUrl: "assets/WebGL.framework.js.unityweb",
@@ -93,9 +93,12 @@ function App() {
 
   return (
     <Fragment >
-      <div className="center">
-          <Loader />
-      </div>
+      {!isLoaded && (
+        <div className="loading-overlay">
+          <div className="loading-spinner"></div>
+          <p>Loading: {Math.round(loadingProgression * 100)}%</p>
+        </div>
+      )}
 
       <Unity
       style ={{
