@@ -93,12 +93,15 @@ function App() {
 
   return (
     <Fragment >
-      {!isLoaded && (
-        <div className="loading-overlay">
-          <div className="loading-spinner"></div>
-          <p>Loading: {Math.round(loadingProgression * 100)}%</p>
-        </div>
-      )}
+     <div className="center">
+          <Loader />
+          {!isLoaded && (
+           <div className="loading-overlay">
+             <div className="loading-spinner"></div>
+             <p>Loading: {Math.round(loadingProgression * 100)}%</p>
+           </div>
+         )}
+     </div>
 
       <Unity
       style ={{
